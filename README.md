@@ -3,7 +3,8 @@ This repository provides some working boilerplate code for building automated te
 
 ### Below are some of the features of this test framework:
   - Uses [lemoncheesecake](http://lemoncheesecake.io/) as a core functional test framework
-  - Provides pre-configured Slack reporting requiring only `SLACK_AUTH_TOKEN` and channel name
+  - Provides awesome and highly readable HTML reports with request and response details
+  - Provides pre-configured Slack reporting which posts the report link(s) at suite level to a specific Slack channel; requires only `SLACK_AUTH_TOKEN` and channel name
   - Provides a way to define different base URL based test environment configurations
   - Provides a way to run one or more of your test suites in a single run serially
 
