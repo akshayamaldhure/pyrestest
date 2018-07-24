@@ -3,9 +3,9 @@ This repository provides some working boilerplate code for building automated te
 
 ### Below are some of the features of this test framework:
   - Uses [lemoncheesecake](http://lemoncheesecake.io/) as a core functional test framework
-  - Uses Slack for reporting
-  - Provides a way to define different test environments
-  - Lets you run one or more of your test suites in a single run
+  - Provides pre-configured Slack reporting requiring only `SLACK_AUTH_TOKEN` and channel name
+  - Provides a way to define different base URL based test environment configurations
+  - Provides a way to run one or more of your test suites in a single run serially
 
 ### Below is the explanation of the key files/directories/modules in the code:
 - The `components` module contains all the individual component files, e.g. `user.py`. The scope of a component file is to define various HTTP methods pertaining to an individual REST entity under test.
