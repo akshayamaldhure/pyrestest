@@ -27,6 +27,12 @@ You can obtain a Slack API access token for your workspace by following the step
 5. Set Username and click Add bot integration.
 6. You’ll get the API access token in Integration Settings.
 
+### Examples
+This repository contains below examples to run some simple API tests from the endpoints from https://jsonplaceholder.typicode.com/ in the test suite file `tests/user_tests.py`. The required base URLs and actual endpoints can be found in `core/conf/environments/default.py` and `core/common/endpoint_constants.py` files respectively.
+1. `verify_get_all_users` - Makes a GET API call to the `/users` endpoint and checks if the number of users returned in the response in greater than 1.
+2. `verify_get_user_details` - Makes a GET API call to the `/users` endpoint by passing a given `userId` in the path parameters of the API request and checks if the `id` returned in the response is same as that in the request.
+3. `verify_create_user` - Makes a POST API call to the `/users` endpoint by passing the required payload to the request and checks if the user gets created successfully.
+
 ### Setting up and running tests
 1. Once you have cloned this repository, you should create a virtual environment using the `virtualenv` tool in the root directory of the project. Note that the name of this virtual environment should be the same as that in the `run.sh` and `.gitignore` files.
 `$ virtualenv venv_name`
