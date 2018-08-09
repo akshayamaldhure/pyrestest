@@ -107,6 +107,7 @@ venv.bak/
 /.idea/*
 *.pyc
 *.txt
+/docker-report/*
 /report/*
 /reports/*
 resources/*

@@ -4,7 +4,7 @@ from core.common.header import Header
 from core.conf.environments.config import get_config_object
 
 config = get_config_object()
-TYPICODE_PING = config.TYPICODE_BASE_URL + 'ping/'
+TYPICODE_PING = config.TYPICODE_BASE_URL # Append  + 'ping/' here if needed
 ping_endpoints = [TYPICODE_PING]
 print("Checking {}".format(ping_endpoints))
 headers = Header().get_base_headers()
