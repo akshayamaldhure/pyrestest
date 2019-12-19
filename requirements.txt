@@ -4,7 +4,7 @@ colorama==0.3.9
 idna==2.7
 lemoncheesecake==1.4.0
 python-slugify==4.0.0
-requests==2.19.1
+requests==2.20.0
 six==1.11.0
 slackclient==1.2.1
 slacker==0.13.0
