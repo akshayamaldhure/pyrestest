@@ -17,4 +17,7 @@ slack_token = args.slacktoken
 slack_channel = args.channel
 message = args.message
 sc = SlackClient(slack_token)
-sc.api_call("chat.postMessage", channel=slack_channel, text=message)
+try:
+    sc.api_call("chat.postMessage", channel=slack_channel, text=message)
+except:
+    print("Unable to connect to Slack for posting the message. Check your internet connection.")
