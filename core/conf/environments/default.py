@@ -9,4 +9,4 @@ class Config(BaseConfig):
 class Prod(BaseConfig):
 
     def __init__(self):
-        print ""
+        print("")
