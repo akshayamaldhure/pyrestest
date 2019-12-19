@@ -35,13 +35,19 @@ This repository contains below examples to run some simple API tests from the en
 3. `verify_create_user` - Makes a POST API call to the `/users` endpoint by passing the required payload to the request and checks if the user gets created successfully.
 
 ### Setting up and running tests
-1. Once you have cloned this repository, you should create a virtual environment using the `virtualenv` tool in the root directory of the project. Note that the name of this virtual environment should be the same as that in the `run.sh` and `.gitignore` files.
-`$ virtualenv venv_name`
-2. Activate the virtual environment with `$ source venv_name/bin/activate`
-3. Install all the project dependencies with `$ pip install -r requirements.txt`
-4. Set `PYTHONPATH` to the project's root directory.
-5. Set `TEST_ENV` to a suitable configuration defined in any of the configuration modules in the `environment` package. Not setting this will make the test framework use the `default` configuration defined in the `environment` package since we have defined this under `config.py`.
-6. Run tests with `entrypoint.sh`. Providing no arguments to this script will run all the test suites defined in the `ALL_TEST_SUITES` shell variable in the given order. In order to run one or more test suites in a custom order, you can use `entrypoint.sh my_test_suite_1 my_test_suite_2` (note no `.py` extension in the test suite names).
-7. If the `SLACK_AUTH_TOKEN` and `SLACK_CHANNEL` provided in `entrypoint.sh` are valid, you should see a message in your Slack channel with test suite name, number of passed/failed tests and report link.
+1. Clone this repository. 
+2. Create a virtual environment in the root directory of this project. Note that the name of this virtual environment (`pyrestest-venv` in this case) should be the same as that in the `run.sh` and `.gitignore` files.
+`virtualenv pyrestest-venv`
+3. Activate the virtual environment we created in step 2.
+`source pyrestest-venv/bin/activate`
+4. Install all the project dependencies.
+`pip install -r requirements.txt`
+5. Set the required environment variables and run the tests with `entrypoint.sh` script.
+`TEST_ENV=default PYTHONPATH=<your_project_root_dir> ./entrypoint.sh`
 
-That's all folks. Happy testing!
+#### About environment variables and `entrypoint.sh` usage
+- `TEST_ENV` - A suitable configuration defined in any of the configuration modules in the `environment` package. Not setting this will make the test framework use the `default` configuration defined in the `environment` package since we have defined this under `config.py`.
+- Providing no arguments to `entrypoint.sh` will run all the test suites defined in the `ALL_TEST_SUITES` shell variable in the given order. In order to run one or more test suites in a custom order, you can use `entrypoint.sh my_test_suite_1 my_test_suite_2` (note no `.py` extension in the test suite names).
+- If the `LCC_SLACK_AUTH_TOKEN` and `LCC_SLACK_CHANNEL` specified in `entrypoint.sh` are valid, you should see a message in your Slack channel with test suite name, number of passed/failed tests and report link.
+
+That's all, folks. Happy testing!

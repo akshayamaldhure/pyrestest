@@ -20,4 +20,4 @@ echo "Test suite execution completed with exit code" ${CURRENT_SUITE_EXECUTION_S
 echo "Copying the latest report in reports/$REPORT_DIR_NAME"
 cp -r report/ ${LOCAL_REPORTS_DIR}/${REPORT_DIR_NAME}
 cp -r report/ docker-report/${REPORT_DIR_NAME}
-echo "Click (Cmd + click on Mac) here to view the test report in your default browser:" ${LOCAL_REPORTS_DIR}/${REPORT_DIR_NAME}/report.html
+echo "Click (Cmd + click on Mac) here to view the test report in your default browser ->" ${LOCAL_REPORTS_DIR}/${REPORT_DIR_NAME}/report.html
