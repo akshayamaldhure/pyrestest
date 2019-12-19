@@ -35,15 +35,23 @@ This repository contains below examples to run some simple API tests from the en
 3. `verify_create_user` - Makes a POST API call to the `/users` endpoint by passing the required payload to the request and checks if the user gets created successfully.
 
 ### Setting up and running tests
-1. Clone this repository. 
+1. Clone this repository.
+
 2. Create a virtual environment in the root directory of this project. Note that the name of this virtual environment (`pyrestest-venv` in this case) should be the same as that in the `run.sh` and `.gitignore` files.
-`virtualenv pyrestest-venv`
+
+    `virtualenv pyrestest-venv`
+
 3. Activate the virtual environment we created in step 2.
-`source pyrestest-venv/bin/activate`
+
+    `source pyrestest-venv/bin/activate`
+    
 4. Install all the project dependencies.
-`pip install -r requirements.txt`
+    
+    `pip install -r requirements.txt`
+
 5. Set the required environment variables and run the tests with `entrypoint.sh` script.
-`TEST_ENV=default PYTHONPATH=<your_project_root_dir> ./entrypoint.sh`
+    
+    `TEST_ENV=default PYTHONPATH=<your_project_root_dir> ./entrypoint.sh`
 
 #### About environment variables and `entrypoint.sh` usage
 - `TEST_ENV` - A suitable configuration defined in any of the configuration modules in the `environment` package. Not setting this will make the test framework use the `default` configuration defined in the `environment` package since we have defined this under `config.py`.
