@@ -14,9 +14,10 @@ echo "Creating directory reports/$REPORT_DIR_NAME"
 mkdir -p reports/${REPORT_DIR_NAME}
 mkdir -p docker-report/${REPORT_DIR_NAME}
 export SLACK_MESSAGE_TEMPLATE="[$TEST_ENV] $1: {passed}/{enabled} passed | $SERVER_URL/$WWW_REPORTS_DIR/$REPORT_DIR_NAME/report/report.html"
-${VENV_NAME}/bin/lcc run $1 --enable-reporting slack console html --exit-error-on-failure
+${VENV_NAME}/bin/lcc run $1 --reporting html json console slack --exit-error-on-failure
 export CURRENT_SUITE_EXECUTION_STATUS=$?
 echo "Test suite execution completed with exit code" ${CURRENT_SUITE_EXECUTION_STATUS}
 echo "Copying the latest report in reports/$REPORT_DIR_NAME"
 cp -r report/ ${LOCAL_REPORTS_DIR}/${REPORT_DIR_NAME}
 cp -r report/ docker-report/${REPORT_DIR_NAME}
+echo "Click (Cmd + click on Mac) here to view the test report in your default browser:" ${LOCAL_REPORTS_DIR}/${REPORT_DIR_NAME}/report.html

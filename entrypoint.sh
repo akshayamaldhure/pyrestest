@@ -1,6 +1,5 @@
 #!/bin/bash
-find ./resources -name "*.json" -type f -delete
-find ./resources -name "*.html" -type f -delete
+
 export SLACK_AUTH_TOKEN="your_slack_token"
 export SLACK_CHANNEL="#yourSlackChannel"
 TEST_SKIP_MESSAGE="*[$TEST_ENV] One or more services required for API tests are unavailable, skipping tests.* :sleeping:"

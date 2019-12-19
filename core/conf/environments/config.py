@@ -8,6 +8,3 @@ def get_config_object():
     config_module = importlib.import_module(module_name)
     class_ = getattr(config_module, 'Config')
     return class_()
-
-
-project_dir = os.path.dirname(__file__)

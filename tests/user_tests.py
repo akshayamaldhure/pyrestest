@@ -30,4 +30,4 @@ def verify_get_user_details():
 def verify_create_user():
     user = User(user_name="Some User", email="someuser@xyz.com")
     response = create_user(base_url=Base.USER_BASE_URL, payload=user.get_create_user_payload())
-    check_that("value", response.status_code, equal_to(200))
+    check_that("value", response.status_code, equal_to(201))

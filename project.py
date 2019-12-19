@@ -1,6 +1,8 @@
-import os.path
+import os.path as osp
 
-from lemoncheesecake.project import SimpleProjectConfiguration, HasPreRunHook
+from lemoncheesecake.fixture import load_fixtures_from_directory
+from lemoncheesecake.project import Project
+from lemoncheesecake.suite import load_suites_from_directory
 
 try:
     from core.common.init import init_session
@@ -10,13 +12,19 @@ except:
     exit(1)
 
 
-class MyProjectConfig(SimpleProjectConfiguration, HasPreRunHook):
+class MyProject(Project):
     def pre_run(self, cli_args, report_dir):
         init_session()
 
+    def post_run(self, cli_args, report_dir):
+        print("Finished executing all the tests")
 
-project_dir = os.path.dirname(__file__)
-project = MyProjectConfig(
-    suites_dir=os.path.join(project_dir, "tests"),
-    fixtures_dir=os.path.join(project_dir, "core/fixtures"),
-)
+    def load_suites(self):
+        return load_suites_from_directory(osp.join(self.dir, "tests"))
+
+    def load_fixtures(self):
+        return load_fixtures_from_directory(osp.join(self.dir, "core/fixtures"))
+
+
+project_dir = osp.dirname(__file__)
+project = MyProject(project_dir)
