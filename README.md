@@ -38,11 +38,11 @@ This repository contains below examples to run some simple API tests from the en
 
 1. Ensure Python3 and other required tools (`pip` and `virtualenv`) are installed on your machine. If not, install them.
 
-  a. Install Python with Homebrew: `brew install python3`
+    a. Install Python with Homebrew: `brew install python3`
   
-  b. Install `pip`: Download `pip` from https://bootstrap.pypa.io/get-pip.py and run `python3 ~/Downloads/get-pip.py`
+    b. Install `pip`: Download `pip` from https://bootstrap.pypa.io/get-pip.py and run `python3 ~/Downloads/get-pip.py`
   
-  c. Install `virtualenv`: `pip install virtualenv`
+    c. Install `virtualenv`: `pip install virtualenv`
 
 2. Clone this repository.
 
