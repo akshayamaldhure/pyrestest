@@ -2,7 +2,7 @@
 This repository provides some working boilerplate code for building automated test suites on top of the lemoncheesecake test framework and uses the "component-tests" model for functional testing of RESTful APIs.
 
 ### Below are some of the features of this test framework:
-  - Uses [lemoncheesecake](http://lemoncheesecake.io/) as a core functional test framework
+  - Uses [lemoncheesecake 1.x](http://lemoncheesecake.io/) as a core functional test framework
   - Provides awesome and highly readable HTML reports with request and response details
   - Provides pre-configured Slack reporting which posts the report link(s) at suite level to a specific Slack channel; requires only `SLACK_AUTH_TOKEN` and channel name
   - Provides a way to define different base URL based test environment configurations
@@ -16,7 +16,7 @@ This repository provides some working boilerplate code for building automated te
 -- The `utilities` package lets you define various utility functions.
 - The `scripts` directory contains various ad-hoc scripts, e.g. `test_ping.py` (used to check if all the endpoints under test are up).
 - The `tests` package contains the actual API tests.
-- The `entrypoint.sh` script does reporting related tasks and uses another `run.sh` script which is run per test suite. You must edit various variables like `SLACK_AUTH_TOKEN`, `SLACK_CHANNEL`, `ALL_TEST_SUITES` as per your needs.
+- The `entrypoint.sh` script does reporting related tasks and uses another `run.sh` script which is run per test suite. You must edit various variables like `LCC_SLACK_AUTH_TOKEN`, `LCC_SLACK_CHANNEL`, `ALL_TEST_SUITES` as per your needs.
 - In the `run.sh` script, your must edit various variables like `SERVER_URL`, `WWW_REPORTS_DIR`, `VENV_NAME` as per your needs.
 
 ### Getting a Slack API access token
