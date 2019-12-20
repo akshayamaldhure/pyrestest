@@ -35,21 +35,30 @@ This repository contains below examples to run some simple API tests from the en
 3. `verify_create_user` - Makes a POST API call to the `/users` endpoint by passing the required payload to the request and checks if the user gets created successfully.
 
 ### Setting up and running tests
-1. Clone this repository.
 
-2. Create a virtual environment in the root directory of this project. Note that the name of this virtual environment (`pyrestest-venv` in this case) should be the same as that in the `run.sh` and `.gitignore` files.
+1. Ensure Python3 and other required tools (`pip` and `virtualenv`) are installed on your machine. If not, install them.
+
+  a. Install Python with Homebrew: `brew install python3`
+  
+  b. Install `pip`: Download `pip` from https://bootstrap.pypa.io/get-pip.py and run `python3 ~/Downloads/get-pip.py`
+  
+  c. Install `virtualenv`: `pip install virtualenv`
+
+2. Clone this repository.
+
+3. Create a virtual environment in the root directory of this project. Note that the name of this virtual environment (`pyrestest-venv` in this case) should be the same as that in the `run.sh` and `.gitignore` files.
 
     `virtualenv pyrestest-venv`
 
-3. Activate the virtual environment we created in step 2.
+4. Activate the virtual environment we created in step 2.
 
     `source pyrestest-venv/bin/activate`
     
-4. Install all the project dependencies.
+5. Install all the project dependencies.
     
     `pip install -r requirements.txt`
 
-5. Set the required environment variables and run the tests with `entrypoint.sh` script.
+6. Set the required environment variables and run the tests with `entrypoint.sh` script.
     
     `TEST_ENV=default PYTHONPATH=<your_project_root_dir> ./entrypoint.sh`
 
